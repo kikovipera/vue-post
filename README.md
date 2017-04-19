@@ -11,6 +11,6 @@ However should you want modify it, simply run the following command:(npm require
     git clone https://github.com/cwang22/vue-post.git
     cd vue-post
     npm install
-    npm run dev #run webpack and watch any modifed files 
-    npm run build #complied files into ES5
+    npm run dev #run webpack dev server and watch any modified files
+    npm run build #complied and minimalise files into ES5
 ````
