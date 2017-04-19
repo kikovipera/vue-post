@@ -1,5 +1,6 @@
-let webpack = require('webpack');
-let path = require('path');
+var webpack = require('webpack');
+var path = require('path');
+
 
 module.exports = {
     entry: './src/app.js',
@@ -16,7 +17,7 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                use: [{loader: "vue-loader"}]
+                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
@@ -25,9 +26,10 @@ module.exports = {
             }
         ]
     },
+
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.esm.js'
+            vue: 'vue/dist/vue.esm.js'
         }
     },
     devServer: {
@@ -47,6 +49,12 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
+            compress: {
+                warnings: false
             }
         }),
         new webpack.LoaderOptionsPlugin({
