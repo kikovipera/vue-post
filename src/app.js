@@ -1,4 +1,4 @@
-require('./app.scss');
+import './app.scss'
 
 import Vue from 'vue';
 import Post from './components/Post.vue';
